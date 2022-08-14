@@ -1,7 +1,9 @@
-import { useState } from 'react';
-import {Card} from './components/Card';
+import { useContext, useState } from 'react';
+import { Card } from './components/Card';
 import { ColoredMessage } from './components/ColoredMessage';
 import { CssModules } from './components/CssModules'
+import { AdminFlagContext } from './components/providers/AdminFlagProvider';
+
 
 
 export const App = () => {
@@ -10,7 +12,8 @@ export const App = () => {
     setNum(num + 1);
   };
 
-  const [isAdmin, setIsAdmin] = useState(false);
+  const { isAdmin, setIsAdmin } = useContext(AdminFlagContext);
+
   const onClickSwitch = () => setIsAdmin(!isAdmin);
 
     return (

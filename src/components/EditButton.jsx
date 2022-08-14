@@ -1,4 +1,5 @@
 import { useContext } from "react";
+
 import { AdminFlagContext } from "./providers/AdminFlagProvider";
 
 const style = {
@@ -7,11 +8,10 @@ const style = {
     borderRadius: '8px'
 };
 
-export const EditButton = props => {
-    const { isAdmin } = props;
+export const EditButton = () => {
+    const { isAdmin } = useContext(AdminFlagContext);
+
   return (
     <button style={style} disabled={!isAdmin}>編集</button>
   );
 };
-
-export default EditButton

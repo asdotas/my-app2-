@@ -1,11 +1,11 @@
 import ReactDOM  from 'react-dom';
 
 import { App } from "./App"
-import { AdminFlagContext } from './components/providers/AdminFlagProvider';
+import { AdminFlagProvider } from './components/providers/AdminFlagProvider';
 
 ReactDOM.render(
-    <AdminFlagContext>
+    <AdminFlagProvider>
         <App />
-    </AdminFlagContext>,
+    </AdminFlagProvider>,
     document.getElementById("root")
 );
